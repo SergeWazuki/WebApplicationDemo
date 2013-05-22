@@ -15,8 +15,13 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <aside id="sidebar"></aside>
-        <section></section>
+    <aside id="sidebar">
+        <h1>Search</h1>
+        <section style="border: 5px solid;">
+            This is search section
+        </section>
+    </aside>
+    <section>This is content section</section>
     </div>
     </form>
 </body>
