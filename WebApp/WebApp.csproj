@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Default.aspx" />
+    <Content Include="Views\scripts\jquery-1.9.1.js" />
+    <Content Include="Views\scripts\knockout-2.2.1.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,7 +97,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>2813</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:2518/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
