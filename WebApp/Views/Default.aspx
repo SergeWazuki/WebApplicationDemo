@@ -7,7 +7,10 @@
     <meta charset="utf-8" />
     <title>HTML5 Demo</title>
     <script src="../Scripts/jquery-1.9.1.js"></script>
+    <script src="../Scripts/jquery-ui-1.10.3.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.10.3.js"></script>
     <script src="../Scripts/knockout-2.2.1.js"></script>
+    <script src="../Scripts/modernizr-2.6.2.js"></script>
     <style>
         body,form
         {
@@ -48,6 +51,10 @@
             text-align: center;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
 </head>
 <body>
     <form id="form" runat="server">
