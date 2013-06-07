@@ -1,0 +1,65 @@
+﻿<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+<style>
+    .container
+    {
+        background: #1e5799; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
+    }
+
+    .command-button
+    {
+        margin: 13px 20px 0 0;
+        height: 32px;
+        width: 32px;
+    }
+</style>
+<script src="../../Scripts/Controls/CommandBar.js"></script>
+<script>
+    $(document).ready(function () {
+        ko.applyBindings(new CommandBarViewModel());
+        $("#zoomSlider").slider({
+            min: 50,
+            max: 150,
+            step: 10,
+            value: 100
+        });
+    });
+</script>
+<div class="container gradient">
+    <div style="float: left; width: auto; height: 100%">
+        <img src="../../Images/logo.png" alt="FirstPoint Logo" style="margin: 10px 0 0 10px" />
+    </div>
+    <div style="width: auto; height: 100%; text-align: left;">
+        <img src="../../Images/activate.png" alt="Activate Workflow" class="command-button" />
+        <img src="../../Images/save.png" alt="Save Workflow" class="command-button" />
+        <img src="../../Images/delete.png" alt="Delete Workflow" class="command-button" />
+        <img src="../../Images/clone.png" alt="Clone Workflow" class="command-button" />
+        <img src="../../Images/create.png" alt="Create Workflow" class="command-button" />
+        <select id="orientation" style="width: 100px"
+            data-bind="options: Orientations,
+                optionsText: 'DisplayText',
+                optionValue: 'Orientation',
+                value: Orientations()[0]">
+        </select>
+        <!--<img src="../../Images/zoom_in.png" alt="Zoom In" style="margin: 0 0 5px 10px" />
+        <img src="../../Images/zoom_out.png" alt="Zoom Out" style="margin: 0 10px 5px 10px" />-->
+        <span id="zoomSlider" style="width: 100px"></span>
+        <img src="../../Images/add_step.png" alt="Add Step" class="command-button" />
+        <img src="../../Images/help.png" alt="Help" class="command-button" />
+    </div>
+</div>

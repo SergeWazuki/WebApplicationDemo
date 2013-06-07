@@ -1,0 +1,87 @@
+﻿<style>
+    p
+    {
+        float: left;
+        color: #1fa4ff;
+        font-family: Arial;
+        font-size: 26.667px;
+        font-weight: bold;
+        padding-top: 20px;
+        margin: 0 15px 10px 20px;
+    }
+
+    td.search-panel-left-column
+    {
+        padding-left: 5px;
+        text-align: left;
+        width: 60px;
+    }
+
+    td.search-panel-right-column
+    {
+        text-align: right;
+        width: 250px;
+    }
+
+    div.container
+    {
+        border: none;
+        height: 100%;
+        width: auto;
+        padding: 10px;
+        margin: 0 auto;
+        background: linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* W3C */
+        background: -moz-linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* FF3.6+ */
+        background: -webkit-linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* IE10+ */
+        background: #AAD6EB; /* Old browsers */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1DEEB', endColorstr='#AAD6EB',GradientType=0 ); /* IE6-9 */
+    }
+</style>
+<script src="../../Scripts/Controls/SearchControl.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        ko.applyBindings(new SearchViewModel());
+    });
+</script>
+<div class="container">
+    <p>Search</p>
+    <table style="margin-left: 20px; border-spacing: 5px; padding: 5px;">
+        <tr>
+            <td class="search-panel-left-column">
+                <label>Status</label>
+            </td>
+            <td class="search-panel-right-column" style="width: 250px">
+                <select id="statusesList"
+                    data-bind="options: Statuses,
+                        optionsText: 'DisplayText',
+                        optionValue: 'Status',
+                        value: Statuses()[0]"
+                    style="width: 150px">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="search-panel-left-column">
+                <label>Type</label>
+            </td>
+            <td class="search-panel-right-column" style="width: 250px">
+                <select id="typesList"
+                    data-bind="options: Types,
+                        optionsText: 'DisplayText',
+                        optionValue: 'Type',
+                        value: Types()[0]"
+                    style="width: 150px">
+                </select>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <label>Name</label>
+        <input type="text" id="searchTextBox" style="width: 60%" />
+        &nbsp;
+        <button id="searchButton" style="width: 70px">Search</button>
+    </div>
+    <select id="templateList" size="40" style="margin: 20px 10px 10px 20px; width: 280px"></select>
+</div>

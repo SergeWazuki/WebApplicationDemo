@@ -120,6 +120,22 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Images\activate.png" />
+    <Content Include="Images\add_step.png" />
+    <Content Include="Images\clone.png" />
+    <Content Include="Images\create.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\end.png" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\normal_step_footer.png" />
+    <Content Include="Images\normal_step_header.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\search_bar_gradient.png" />
+    <Content Include="Images\start.png" />
+    <Content Include="Images\zoom_in.png" />
+    <Content Include="Images\zoom_out.png" />
+    <Content Include="Scripts\Controls\CommandBar.js" />
     <Content Include="Scripts\jquery-2.0.1.js" />
     <Content Include="Scripts\jquery-2.0.1.min.js" />
     <Content Include="Scripts\jquery-2.0.1.min.map" />
@@ -132,30 +148,17 @@
     <Content Include="Scripts\knockout.validation.debug.js" />
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\SearchControl.js" />
+    <Content Include="Scripts\Controls\SearchControl.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Controls\SearchControl.ascx" />
-    <Content Include="Views\Default.aspx" />
+    <Content Include="Views\Controls\CommandBar.html" />
+    <Content Include="Views\Controls\SearchPanel.html" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Views\Index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\WFTemplateModel.cs" />
-    <Compile Include="Views\Controls\SearchControl.ascx.cs">
-      <DependentUpon>SearchControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Controls\SearchControl.ascx.designer.cs">
-      <DependentUpon>SearchControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
