@@ -10,17 +10,17 @@ function WFType(displayText, type) {
 
 function SearchViewModel() {
     // Initializes dummy data
-    this.StatusesArray = [
+    var statusesArray = [
         new WFStatus("All", "all"),
         new WFStatus("Active", "active"),
         new WFStatus("Inactive", "inactive")];
 
-    this.TypesArray = [
+    var typesArray = [
         new WFType("Standard", "std"),
         new WFType("Periodic", "prd"),
         new WFType("Training", "trn")];
 
     // Bindings
-    this.Statuses = ko.observableArray(this.StatusesArray);
-    this.Types = ko.observableArray(this.TypesArray);
+    this.Statuses = ko.observableArray(statusesArray);
+    this.Types = ko.observableArray(typesArray);
 }

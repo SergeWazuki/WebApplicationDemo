@@ -1,16 +1,16 @@
 ﻿<style>
     p
     {
-        float: left;
         color: #1fa4ff;
         font-family: Arial;
         font-size: 26.667px;
         font-weight: bold;
         padding-top: 20px;
         margin: 0 15px 10px 20px;
+        text-align: left;
     }
 
-    td.search-panel-left-column
+    /*td.search-panel-left-column
     {
         padding-left: 5px;
         text-align: left;
@@ -21,15 +21,16 @@
     {
         text-align: right;
         width: 250px;
-    }
+    }*/
 
-    div.container
+    #searchPanel
     {
         border: none;
         height: 100%;
         width: auto;
         padding: 10px;
         margin: 0 auto;
+        text-align: left;
         background: linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* W3C */
         background: -moz-linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* FF3.6+ */
         background: -webkit-linear-gradient(top, #D1DEEB 12%, #AAD6EB 56%); /* Chrome10+,Safari5.1+ */
@@ -38,50 +39,64 @@
         background: #AAD6EB; /* Old browsers */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1DEEB', endColorstr='#AAD6EB',GradientType=0 ); /* IE6-9 */
     }
+
+    select.drop-down
+    {
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    #searchResultsList
+    {
+        height: calc(100% - 200px);
+        height: -moz-calc(100% - 200px);
+        height: -webkit-calc(100% - 200px);
+        width: calc(100% - 50px);
+        width: -moz-calc(100% - 50px);
+        width: -webkit-calc(100% - 50px);
+        margin: 20px 10px 10px 25px;
+    }
 </style>
 <script src="../../Scripts/Controls/SearchControl.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        ko.applyBindings(new SearchViewModel());
-    });
+    //var search = new SearchViewModel();
+    //ko.applyBindings(search, $("#searchPanel")[0]);
 </script>
-<div class="container">
+<div id="searchPanel">
     <p>Search</p>
-    <table style="margin-left: 20px; border-spacing: 5px; padding: 5px;">
+    <table style="margin-left: 20px; border-spacing: 7px;">
         <tr>
             <td class="search-panel-left-column">
-                <label>Status</label>
+                <label>Activation Status</label>
             </td>
-            <td class="search-panel-right-column" style="width: 250px">
-                <select id="statusesList"
+            <td class="search-panel-right-column">
+                <select id="statusesList" class="drop-down"
                     data-bind="options: Statuses,
                         optionsText: 'DisplayText',
                         optionValue: 'Status',
-                        value: Statuses()[0]"
-                    style="width: 150px">
+                        value: Statuses()[0]">
                 </select>
             </td>
         </tr>
         <tr>
             <td class="search-panel-left-column">
-                <label>Type</label>
+                <label>Workflow Type</label>
             </td>
-            <td class="search-panel-right-column" style="width: 250px">
-                <select id="typesList"
+            <td class="search-panel-right-column">
+                <select id="typesList" class="drop-down"
                     data-bind="options: Types,
                         optionsText: 'DisplayText',
                         optionValue: 'Type',
-                        value: Types()[0]"
-                    style="width: 150px">
+                        value: Types()[0]">
                 </select>
             </td>
         </tr>
     </table>
-    <div>
+    <div style="margin-left: 26px;">
         <label>Name</label>
-        <input type="text" id="searchTextBox" style="width: 60%" />
+        <input type="text" id="searchTextBox" style="width: 180px" />
         &nbsp;
         <button id="searchButton" style="width: 70px">Search</button>
     </div>
-    <select id="templateList" size="40" style="margin: 20px 10px 10px 20px; width: 280px"></select>
+    <select id="searchResultsList" size="40"></select>
 </div>

@@ -18,14 +18,6 @@
             text-align: center;
         }
 
-        /*div
-        {
-            display: block;
-            border-width: 1px;
-            border-style: solid;
-            border-color: black;
-        }*/
-
         #searchPanelContainer
         {
             float: left;
@@ -33,8 +25,12 @@
             height: 100%;
             padding: 0;
             text-align: center;
+            -moz-background-clip: padding-box;
+            -webkit-background-clip: padding-box;
             background-clip: padding-box;
+            -webkit-border-bottom-right-radius: 10px;
             border-bottom-right-radius: 10px;
+            -webkit-border-top-right-radius: 10px;
             border-top-right-radius: 10px;
             overflow: hidden;
         }
@@ -47,23 +43,50 @@
             padding: 0;
             text-align: center;
         }
+
+        /*#commandBarContainer, #drawingPanelContainer
+        {
+            position: absolute;
+            left: 320px;
+            min-width: 820px;
+        }*/
+        #drawingPanelContainer
+        {
+            height: calc(100% - 60px);
+            height: -moz-calc(100% - 60px);
+            height: -webkit-calc(100% - 60px);
+        }
     </style>
+    <script src="../Scripts/Controls/CommandBar.js"></script>
+    <script src="../Scripts/Controls/SearchControl.js"></script>
+    <script src="../Scripts/Controls/StepDrawing.js"></script>
     <script type="text/javascript">
+        /// <reference path="../../Views/Controls/SearchPanel.html" />
+        /// <reference path="../../Views/Controls/CommandBar.html" />
+        /// <reference path="../../Views/Controls/DrawingPanel.html" />
         $(document).ready(function () {
             $("#searchPanelContainer").load("Controls/SearchPanel.html");
-            $("#commandBar").load("Controls/CommandBar.html");
+            $("#commandBarContainer").load("Controls/CommandBar.html");
+            $("#drawingPanelContainer").load("Controls/DrawingPanel.html");
+            function WFDesignerViewModel() {
+                this.SearchVM = new SearchViewModel();
+                //ko.applyBindingsToDescendants(this.SearchVM, document.getElementById("searchPanelContainer"));
+                this.CommandBarVM = new CommandBarViewModel();
+            }
+            var viewModel = new WFDesignerViewModel();
+            ko.applyBindings(viewModel);
+            ko.applyBindingsToDescendants(this.SearchVM, document.getElementById("searchPanelContainer"));
+            //ko.applyBindings(viewModel.SearchVM, document.getElementById("searchPanelContainer"));
         });
     </script>
 </head>
 <body>
     <form id="form" runat="server">
         <div id="splitter" style="height: 100%; width: 100%;">
-            <div id="searchPanelContainer"></div>
+            <div id="searchPanelContainer" data-bind="with: SearchVM"></div>
             <div id="mainPanelContainer">
-                <div id="commandBar" style="width: 100%; height: 40px"></div>
-                <div id="templateBody" style="width: 100%; height: auto">
-                    <canvas id="stepFigures" style="height: 100%"></canvas>
-                </div>
+                <div id="commandBarContainer" style="width: 100%; height: 60px; padding: 0px"></div>
+                <div id="drawingPanelContainer" style="width: 100%; height: auto"></div>
             </div>
         </div>
     </form>

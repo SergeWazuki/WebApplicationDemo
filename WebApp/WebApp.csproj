@@ -135,7 +135,10 @@
     <Content Include="Images\start.png" />
     <Content Include="Images\zoom_in.png" />
     <Content Include="Images\zoom_out.png" />
+    <Content Include="Scripts\canvas-utils.js" />
+    <None Include="Scripts\canvas-vsdoc.js" />
     <Content Include="Scripts\Controls\CommandBar.js" />
+    <Content Include="Scripts\Controls\StepDrawing.js" />
     <Content Include="Scripts\jquery-2.0.1.js" />
     <Content Include="Scripts\jquery-2.0.1.min.js" />
     <Content Include="Scripts\jquery-2.0.1.min.map" />
@@ -149,8 +152,12 @@
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Controls\SearchControl.js" />
+    <Content Include="Scripts\NamespacesAndEnumSupport.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Scripts\_vs2012.intellisense.js" />
+    <Content Include="Scripts\_vs2012.intellisense.Test.js" />
     <Content Include="Views\Controls\CommandBar.html" />
+    <Content Include="Views\Controls\DrawingPanel.html" />
     <Content Include="Views\Controls\SearchPanel.html" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />

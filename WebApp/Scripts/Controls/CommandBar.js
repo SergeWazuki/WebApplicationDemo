@@ -5,10 +5,10 @@
 
 function CommandBarViewModel() {
     // Initializes dummy data
-    this.OrientationsArray = [
+    var orientationsArray = [
         new StepOrientation("Horizontal", "hoz"),
         new StepOrientation("Vertical", "var")];
 
     // Bindings
-    this.Orientations = ko.observableArray(this.OrientationsArray);
+    this.Orientations = ko.observableArray(orientationsArray);
 }
