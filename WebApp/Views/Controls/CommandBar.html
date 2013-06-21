@@ -60,16 +60,25 @@
         width: 32px;
     }
 </style>
+<script src="../../Scripts/jquery-ui-1.10.3.js"></script>
+<script src="../../Scripts/jquery-ui-1.10.3.min.js"></script>
 <script src="../../Scripts/Controls/CommandBar.js"></script>
 <script>
     var commandBar = new CommandBarViewModel();
     //ko.applyBindings(commandBar, $("#commandBar")[0]);
-    $("#zoomSlider").slider({
+    $.ui.slider({
         min: 50,
         max: 150,
         step: 10,
         value: 100
-    });
+    },
+    $("#zoomSlider"));
+    //$("#zoomSlider").slider({
+    //    min: 50,
+    //    max: 150,
+    //    step: 10,
+    //    value: 100
+    //});
 </script>
 <div id="commandBar" class="gradient">
     <div style="float: left; height: 100%">
